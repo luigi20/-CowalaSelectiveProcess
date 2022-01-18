@@ -1,20 +1,20 @@
-import { ICreateProductDTO } from '../CreateProduct/ICreateProductDTO';
+import { IUpdateProductDTO } from '../UpdateProduct/IUpdateProductDTO';
 import { IProductRepository } from "../../repositories/IProductRepository";
 import { Product } from '../../entities/Product';
 
 
-export class CreateProductUseCase {
+export class UpdateProductUseCase {
     constructor(private productRepository: IProductRepository) {
 
     }
-    async execute(data: ICreateProductDTO) {
+    async execute(data: IUpdateProductDTO) {
 
         try {
             const product = new Product(data);
-            await this.productRepository.create(product);
+            await this.productRepository.update(product);
             return product;
         } catch (err) {
-            throw new Error("Product Not Saved");
+            throw new Error("Product Not Updated");
         }
     }
 }

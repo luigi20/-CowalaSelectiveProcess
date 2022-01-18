@@ -6,9 +6,10 @@ export class Product {
     public preco: number;
 
     constructor(props: Omit<Product, 'id'>, id?: string) {
-        Object.assign(this, props);
         if (!id) {
             this.id = uuidv4();
         }
+        Object.assign(this, props);
+
     }
 }
