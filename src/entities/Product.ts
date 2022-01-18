@@ -1,7 +1,6 @@
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 export class Product {
-
     public readonly id: string;
     public item: string;
     public preco: number;
@@ -9,7 +8,7 @@ export class Product {
     constructor(props: Omit<Product, 'id'>, id?: string) {
         Object.assign(this, props);
         if (!id) {
-            this.id = uuid();
+            this.id = uuidv4();
         }
     }
 }
