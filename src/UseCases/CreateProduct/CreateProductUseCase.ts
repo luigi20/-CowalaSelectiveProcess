@@ -11,7 +11,7 @@ export class CreateProductUseCase {
 
         try {
             const product = new Product(data);
-            await this.productRepository.save(product);
+            await this.productRepository.create(product);
         } catch (err) {
             throw new Error("Product Not Saved");
         }
