@@ -3,34 +3,39 @@ import { Product } from '../../entities/Product';
 
 export class ListProductRepository implements IProductRepository {
 
-    private listProducts: Product[] = [];
+    private static listProducts: Product[] = [];
+    //utilizando lista estática para persistência dos dados
     async create(product: Product): Promise<Product> {
-        this.listProducts.push(product);
+        ListProductRepository.listProducts.push(product);
         return product;
     }
 
     async update(productUpdate: Product): Promise<Product> {
-        const productAlreadyExists = this.readOne(productUpdate.id);
-        if (!productAlreadyExists) {
+        const index = ListProductRepository.listProducts.findIndex(product => product.id === productUpdate.id);
+        if (index === -1) {
             throw new Error("Product Not Found");
         }
-        const index = this.listProducts.findIndex(product => product.id === productUpdate.id);
-        this.listProducts[index] = productUpdate;
+        ListProductRepository.listProducts[index] = productUpdate;
+        console.log(ListProductRepository.listProducts);
         return productUpdate;
     }
 
     async readAll(): Promise<Product[]> {
-        console.log(this.listProducts);
-        return this.listProducts;
+        return ListProductRepository.listProducts;
     }
 
     async readOne(id: string): Promise<Product> {
-        const product = this.listProducts.find(product => product.id === id);
+        const product = ListProductRepository.listProducts.find(product => product.id === id);
         return product;
     }
 
-    async delete(id: string): Promise<void> {
-        const index = this.listProducts.findIndex(product => product.id === id);
-        this.listProducts.splice(index, 1);
+    async delete(id: string): Promise<number> {
+        const index = ListProductRepository.listProducts.findIndex(product => product.id === id);
+        if (index !== -1) {
+            ListProductRepository.listProducts.splice(index, 1);
+            //throw new Error("Product Not Registered");
+        }
+
+        return index;
     }
 }

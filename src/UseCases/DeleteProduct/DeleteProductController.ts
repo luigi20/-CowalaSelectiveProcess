@@ -7,7 +7,7 @@ export class DeleteProductController {
         try {
             const { id } = req.params;
             await this.deleteProductUseCase.execute(id);
-            return res.status(201).send();
+            return res.status(204).json();
         } catch (err) {
             return res.status(400).json({ error: err.message || 'Unexpected error' });
         }

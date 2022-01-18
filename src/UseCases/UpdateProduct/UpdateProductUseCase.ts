@@ -11,8 +11,8 @@ export class UpdateProductUseCase {
 
         try {
             const product = new Product(data);
-            await this.productRepository.update(product);
-            return product;
+            const updateProduct = await this.productRepository.update(product);
+            return updateProduct;
         } catch (err) {
             throw new Error("Product Not Updated");
         }
