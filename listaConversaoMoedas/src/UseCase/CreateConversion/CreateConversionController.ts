@@ -7,7 +7,7 @@ export class CreateConversionController {
         const { initials } = req.body;
         try {
             const currencyConversion = await this.createConversionUseCase.execute(initials);
-            return currencyConversion
+            return res.json(currencyConversion);
         } catch (err) {
             return res.status(400).json({ error: err.message || 'Unexpected error' });
         }
