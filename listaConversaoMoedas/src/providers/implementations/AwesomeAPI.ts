@@ -11,7 +11,7 @@ export class AwesomeApi implements IAwesomeAPI {
         try {
             const { data } = await axios.get(`https://economia.awesomeapi.com.br/last/${initials}`);
             const initialsVector = new Array(initials.replace('-', ''));
-            for (let i = 0; i < 1; i++) {
+            for (let i = 0; i < initialsVector.length; i++) {
                 let { code, codein, low, bid } = data[initialsVector[i]]
                 dataCurrencyConversion = { moedaOriginal: code, moedaDaConversao: codein, valorEnviado: 1, valorConvertido: bid }
             }
