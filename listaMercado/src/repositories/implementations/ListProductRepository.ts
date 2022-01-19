@@ -33,7 +33,6 @@ export class ListProductRepository implements IProductRepository {
         const index = ListProductRepository.listProducts.findIndex(product => product.id === id);
         if (index !== -1) {
             ListProductRepository.listProducts.splice(index, 1);
-            //throw new Error("Product Not Registered");
         }
 
         return index;
