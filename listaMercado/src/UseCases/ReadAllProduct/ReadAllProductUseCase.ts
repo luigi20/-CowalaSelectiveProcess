@@ -5,10 +5,10 @@ export class ReadAllProductUseCase {
     constructor(private productRepository: IProductRepository) { }
 
     async execute() {
-        const product = await this.productRepository.readAll();
-        if (product.length === 0) {
+        const listProduct = await this.productRepository.readAll();
+        if (listProduct.length === 0) {
             throw new Error("There Are No Registered Products");
         }
-        return product;
+        return listProduct;
     }
 }
