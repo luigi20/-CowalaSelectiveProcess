@@ -7,20 +7,16 @@ class Classificador {
         Object.keys(arrayObject).map(function (key) {
             if (arrayObject[key]['souEu']) {
                 orderArray.push(arrayObject[key]);
-                //     console.log(orderArray);
             };
             if (arrayObject[key]['responsavel']) {
                 orderArrayResponsability.push(arrayObject[key]);
-                //    console.log(orderResponsability);
             }
-            if (!arrayObject[key]['responsavel']) {
+            if (!arrayObject[key]['responsavel'] && !arrayObject[key]['souEu']) {
                 orderArrayNotResponsability.push(arrayObject[key]);
             }
         });
-        console.log(orderArrayResponsability);
         Object.keys(orderArrayResponsability).map(function (key) {
             orderArrayResponsability.sort(function (person1, person2) {
-
                 if (person1['nome'] > person2['nome']) {
                     return 1;
                 }
@@ -29,9 +25,20 @@ class Classificador {
                 }
                 return 0;
             })
-
-
         });
+        Object.keys(orderArrayNotResponsability).map(function (key) {
+            orderArrayNotResponsability.sort(function (person1, person2) {
+                if (person1['nome'] > person2['nome']) {
+                    return 1;
+                }
+                if (person1['nome'] < person2['nome']) {
+                    return -1;
+                }
+                return 0;
+            })
+        });
+        orderArray.push(orderArrayResponsability);
+        orderArray.push(orderArrayNotResponsability);
         return orderArray;
     }
 }

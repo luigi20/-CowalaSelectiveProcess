@@ -5,7 +5,7 @@ class ClassificadorController {
     async handle(req: Request, res: Response) {
         const listObject = req.body;
         const classificador = new Classificador();
-        const result = classificador.execute(listObject);
+        const result = await classificador.execute(listObject);
         return res.json(result);
     }
 }
