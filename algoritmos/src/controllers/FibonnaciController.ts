@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Fibonacci } from '../services/fibonnaci';
+import { Fibonacci } from '../services/Fibonnaci';
 import { Faxina } from '../services/Faxina';
 
 class FibonacciController {
