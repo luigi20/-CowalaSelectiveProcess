@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { createConversionController } from './UseCase/CreateConversion';
 import { deleteConversionController } from './UseCase/DeleteConversion';
+import { readAllConversionController } from './UseCase/ReadAllConversion';
 
 const routes = Router();
 
@@ -10,5 +11,7 @@ routes.post('/conversion', (req, res) => {
 routes.delete('/conversion/:id', (req, res) => {
     return deleteConversionController.handle(req, res);
 })
-
+routes.get('/conversion/all', (req, res) => {
+    return readAllConversionController.handle(req, res);
+})
 export { routes }
