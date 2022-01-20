@@ -11,4 +11,21 @@ export class CurrencyConversionRepository implements ICurrencyConversionReposito
         CurrencyConversionRepository.listCurrencyConversion.push(currencyConversion);
         return currencyConversion;
     }
+
+    async readAll(): Promise<CurrencyConversion[]> {
+        return CurrencyConversionRepository.listCurrencyConversion;
+    }
+
+    async readOne(id: string): Promise<CurrencyConversion> {
+        const currencyConversion = CurrencyConversionRepository.listCurrencyConversion.find(conversion => conversion.id === id);
+        return currencyConversion;
+    }
+
+    async delete(id: string): Promise<number> {
+        const index = CurrencyConversionRepository.listCurrencyConversion.findIndex(conversion => conversion.id === id);
+        if (index !== -1) {
+            CurrencyConversionRepository.listCurrencyConversion.splice(index, 1);
+        }
+        return index;
+    }
 }
