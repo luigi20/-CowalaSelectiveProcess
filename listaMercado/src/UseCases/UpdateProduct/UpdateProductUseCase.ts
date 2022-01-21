@@ -1,5 +1,5 @@
 import { IUpdateProductDTO } from '../UpdateProduct/IUpdateProductDTO';
-import { IProductRepository } from "../../repositories/IProductRepository";
+import { IProductRepository } from "../../repositories/interfaces/IProductRepository";
 import { Product } from '../../entities/Product';
 
 

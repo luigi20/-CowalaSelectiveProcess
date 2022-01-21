@@ -1,4 +1,4 @@
-import { IProductRepository } from '../IProductRepository';
+import { IProductRepository } from '../interfaces/IProductRepository';
 import { Product } from '../../entities/Product';
 
 export class ListProductRepository implements IProductRepository {

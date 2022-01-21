@@ -1,4 +1,4 @@
-import { IProductRepository } from '../../repositories/IProductRepository';
+import { IProductRepository } from "../../repositories/interfaces/IProductRepository";
 
 export class ReadAllProductUseCase {
 
