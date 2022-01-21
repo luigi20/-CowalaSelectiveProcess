@@ -17,10 +17,10 @@ class Classificador {
         });
         Object.keys(orderArrayResponsability).map(function (key) {
             orderArrayResponsability.sort(function (person1, person2) {
-                if (person1['nome'] > person2['nome']) {
+                if (person1['nome'].toUpperCase() > person2['nome'].toUpperCase()) {
                     return 1;
                 }
-                if (person1['nome'] < person2['nome']) {
+                if (person1['nome'].toUpperCase() < person2['nome'].toUpperCase()) {
                     return -1;
                 }
                 return 0;
@@ -28,10 +28,10 @@ class Classificador {
         });
         Object.keys(orderArrayNotResponsability).map(function (key) {
             orderArrayNotResponsability.sort(function (person1, person2) {
-                if (person1['nome'] > person2['nome']) {
+                if (person1['nome'].toUpperCase() > person2['nome'].toUpperCase()) {
                     return 1;
                 }
-                if (person1['nome'] < person2['nome']) {
+                if (person1['nome'].toUpperCase() < person2['nome'].toUpperCase()) {
                     return -1;
                 }
                 return 0;
