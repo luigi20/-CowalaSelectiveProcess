@@ -1,5 +1,5 @@
 import { CurrencyConversion } from "../../entities/CurrencyConversion";
 
 export interface IAwesomeAPI {
-    data(initials: string): Promise<CurrencyConversion>;
+    data(initials: string, amountReceived: number): Promise<CurrencyConversion>;
 }

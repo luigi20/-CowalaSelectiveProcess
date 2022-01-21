@@ -1,8 +1,8 @@
-import { CurrencyConversionRepository } from "../../repositories/implementation/CurrencyConversionRepository";
+import { ICurrencyConversionRepository } from "../../repositories/interfaces/ICurrencyConversionRepository";
 
 export class ReadAllConversionUseCase {
 
-    constructor(private currencyConversionRepository: CurrencyConversionRepository) { }
+    constructor(private currencyConversionRepository: ICurrencyConversionRepository) { }
 
     async execute() {
         const listCurrencyConversion = await this.currencyConversionRepository.readAll();
