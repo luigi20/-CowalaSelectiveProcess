@@ -1,7 +1,7 @@
-import { CurrencyConversionRepository } from "../../repositories/implementation/CurrencyConversionRepository";
+import { ICurrencyConversionRepository } from "../../repositories/interfaces/ICurrencyConversionRepository";
 
 export class DeleteConversionUseCase {
-    constructor(private currencyConversionRepository: CurrencyConversionRepository) { }
+    constructor(private currencyConversionRepository: ICurrencyConversionRepository) { }
     async execute(id: string) {
         const index = await this.currencyConversionRepository.delete(id);
         if (index === -1) {
