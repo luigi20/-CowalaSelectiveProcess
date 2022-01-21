@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { Classificador } from '../services/Classificador';
+import { Request, Response } from "express";
+import { Classificador } from "../services/Classificador";
 
 class ClassificadorController {
     async handle(req: Request, res: Response) {

@@ -1,5 +1,5 @@
 import { ICreateProductDTO } from '../CreateProduct/ICreateProductDTO';
-import { IProductRepository } from "../../repositories/IProductRepository";
+import { IProductRepository } from "../../repositories/interfaces/IProductRepository";
 import { Product } from '../../entities/Product';
 
 
