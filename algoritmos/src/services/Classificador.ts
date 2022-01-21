@@ -37,8 +37,7 @@ class Classificador {
                 return 0;
             })
         });
-        orderArray.push(orderArrayResponsability);
-        orderArray.push(orderArrayNotResponsability);
+        orderArray.push(orderArrayResponsability, orderArrayNotResponsability);
         return orderArray;
     }
 }
