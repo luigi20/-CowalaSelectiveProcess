@@ -1,6 +1,6 @@
 # -CowalaSelectiveProcess
 
-## Padrões
+## Patterns
 
 Foi utilizado o padrão conhecido como Package by feature, send um padrão em que se estrutura as pastas da aplicação por funcionalidade. Além disso, foram utilizados principios do padrão SOLID.
 
@@ -34,3 +34,9 @@ Foi utilizado o padrão conhecido como Package by feature, send um padrão em qu
 - Listar Conversão de Moedas
 - Listar Conversão de Moedas por ID
 
+## Algoritmos
+
+- Fibonnaci
+- Classificador
+- Faxina
+- Validador
