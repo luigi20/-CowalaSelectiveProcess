@@ -16,8 +16,5 @@ Foi utilizado o padrão conhecido como Package by feature, send um padrão em qu
   <p>SUPERSET utilizado para introduzir o conceito de OOP ao Javascript e evitar dores de cabeça como funções sem o tipo do retorno</p>
 </p>
 
- <p align="center">
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fkafka.js.org%2Fdocs%2Fgetting-started&psig=AOvVaw0ZQZ4cFnCg0ij6cC043BXJ&ust=1644696025632000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPiN5PK4-PUCFQAAAAAdAAAAABAD" width="150" alt="KafkaJS" align="center">
-  <p>Biblioteca utilizada pela comunidade Node para mensageria e stream do Kafka</p>
-</p>
+
 
